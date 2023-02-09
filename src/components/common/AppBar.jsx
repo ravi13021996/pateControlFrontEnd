@@ -17,7 +17,7 @@ import Button from '@mui/material/Button';
 import {useNavigate} from "react-router-dom"
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Home', 'About', 'Contact', 'Marketing'];
 
 function DrawerAppBar(props) {
     const { window, children } = props;
@@ -35,7 +35,7 @@ function DrawerAppBar(props) {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
+                    <ListItem key={item} disablePadding onClick={()=>navigate(`/${ item==="Home"?"":item}`)}>
                         <ListItemButton sx={{ textAlign: 'center' }}>
                             <ListItemText primary={item} />
                         </ListItemButton>
